@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Pet - PawPal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-paw"></i>
+                <span>PawPal</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="explore.html" class="nav-link">Explore Pets</a>
+                <a href="sell.html" class="nav-link">List Your Pet</a>
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Order Section -->
+    <section class="order-section">
+        <div class="container">
+            <h1>Complete Your Order</h1>
+            <div class="order-grid">
+                <!-- Pet Summary -->
+                <div class="pet-summary card">
+                    <h3>Pet Details</h3>
+                    <div class="summary-content">
+                        <img src="/placeholder.svg?height=200&width=200&text=Golden+Retriever" alt="Pet" id="order-pet-image">
+                        <div class="summary-info">
+                            <h4 id="order-pet-name">Buddy</h4>
+                            <p id="order-pet-breed">Golden Retriever | 2 years, 6 months</p>
+                            <p class="summary-price" id="order-pet-price">$850</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Form -->
+                <div class="order-form card">
+                    <h3>Buyer Information</h3>
+                    <form id="order-form">
+                        <div class="form-group">
+                            <label for="buyer-name">Full Name</label>
+                            <input type="text" id="buyer-name" name="buyer-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="buyer-email">Email</label>
+                            <input type="email" id="buyer-email" name="buyer-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="buyer-phone">Phone Number</label>
+                            <input type="tel" id="buyer-phone" name="buyer-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="buyer-address">Delivery Address</label>
+                            <textarea id="buyer-address" name="buyer-address" rows="3" required></textarea>
+                        </div>
+
+                        <!-- Payment Section -->
+                        <div class="payment-section">
+                            <h4>Payment Details</h4>
+                            <div class="payment-info">
+                                <div class="payment-item">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <span>Total Amount: <strong id="total-amount">$850</strong></span>
+                                </div>
+                                <div class="payment-item">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Razorpay Payment Gateway</span>
+                                </div>
+                                <div class="payment-methods">
+                                    <img src="/placeholder.svg?height=30&width=50&text=Visa" alt="Visa">
+                                    <img src="/placeholder.svg?height=30&width=50&text=MC" alt="Mastercard">
+                                    <img src="/placeholder.svg?height=30&width=50&text=UPI" alt="UPI">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">Place Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="success-animation">
+                    <i class="fas fa-paw bounce"></i>
+                </div>
+                <h2>Order Confirmed!</h2>
+                <p>Your new furry friend is on their way!</p>
+            </div>
+            <div class="modal-body">
+                <div class="order-details">
+                    <div class="order-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Order ID: #PAWPAL12345</span>
+                    </div>
+                    <div class="order-item">
+                        <i class="fas fa-truck"></i>
+                        <span>Estimated Delivery: 3-5 business days</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('success-modal')">View My Purchases</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="order.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - PawPal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-paw"></i>
+                <span>PawPal</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="explore.html" class="nav-link">Explore Pets</a>
+                <a href="sell.html" class="nav-link">List Your Pet</a>
+                <div class="user-menu">
+                    <div class="notification-bell" onclick="toggleNotifications()">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge" id="notification-badge">2</span>
+                    </div>
+                    <div class="user-avatar" onclick="toggleUserMenu()">
+                        <img src="/placeholder.svg?height=32&width=32&text=U" alt="User Avatar">
+                    </div>
+                </div>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard-section">
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            <aside class="dashboard-sidebar">
+                <div class="sidebar-header">
+                    <i class="fas fa-paw"></i>
+                    <span>PawPal</span>
+                </div>
+                <nav class="sidebar-nav">
+                    <a href="#" class="sidebar-link active" data-tab="listings">
+                        <i class="fas fa-list"></i>
+                        <span>My Listings</span>
+                    </a>
+                    <a href="#" class="sidebar-link" data-tab="purchases">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>My Purchases</span>
+                    </a>
+                    <a href="#" class="sidebar-link" data-tab="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Profile Settings</span>
+                    </a>
+                </nav>
+                <div class="sidebar-footer">
+                    <a href="#" class="sidebar-link logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="dashboard-main">
+                <div class="dashboard-header">
+                    <h1>Dashboard</h1>
+                </div>
+
+                <!-- My Listings Tab -->
+                <div class="tab-content active" id="listings-tab">
+                    <div class="content-grid" id="listings-grid">
+                        <!-- Listings will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- My Purchases Tab -->
+                <div class="tab-content" id="purchases-tab">
+                    <div class="content-grid" id="purchases-grid">
+                        <!-- Purchases will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Profile Settings Tab -->
+                <div class="tab-content" id="settings-tab">
+                    <div class="settings-form card">
+                        <h3>Profile Settings</h3>
+                        <form id="profile-form">
+                            <div class="form-group">
+                                <label for="profile-name">Name</label>
+                                <input type="text" id="profile-name" name="profile-name" value="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-email">Email</label>
+                                <input type="email" id="profile-email" name="profile-email" value="john.doe@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-address">Address</label>
+                                <textarea id="profile-address" name="profile-address" rows="3">123 Pet Lane, City, State, Zip</textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <!-- Notifications Dropdown -->
+    <div class="notifications-dropdown" id="notifications-dropdown">
+        <div class="notifications-header">
+            <span>Notifications</span>
+            <button onclick="markAllAsRead()">Mark all as read</button>
+        </div>
+        <div class="notifications-list" id="notifications-list">
+            <!-- Notifications will be loaded here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawPal - Find Your Furry (or Feathery) Friend</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-bTocrosvbkWpScyPnfD72S0NgWUauE.png" alt="PawPal Logo" class="nav-logo-img">
+                <span>PawPal</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="explore.html" class="nav-link">Explore Pets</a>
+                <a href="sell.html" class="nav-link">List Your Pet</a>
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-AZWhhcJMWwOMKNwP7iR0J5rQljCR7e.png" alt="Find Your Furry (or Feathery) Friend - PawPal Hero" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose PawPal?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-check"></i>
+                    </div>
+                    <h3>Verified Sellers</h3>
+                    <p>Every seller is thoroughly verified to ensure you're getting pets from trusted and responsible sources.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Secure Payments</h3>
+                    <p>All transactions are protected with industry-leading security and encrypted payment processing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our dedicated customer support team is available around the clock to assist you with any questions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Health Guarantee</h3>
+                    <p>All pets come with complete health certificates, vaccination records, and health guarantees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Pets Section -->
+    <section class="trending-pets">
+        <div class="container">
+            <h2>Trending Pets</h2>
+            <div class="trending-grid">
+                <div class="trending-card" onclick="viewTrendingPet(1)">
+                    <img src="/placeholder.svg?height=200&width=300&text=Golden+Retriever" alt="Rocky the Golden Retriever">
+                    <div class="trending-card-content">
+                        <h3>Rocky</h3>
+                        <p>Golden Retriever • 2 years</p>
+                        <div class="trending-price">$850</div>
+                        <button class="btn btn-secondary btn-sm">View Details</button>
+                    </div>
+                </div>
+                <div class="trending-card" onclick="viewTrendingPet(2)">
+                    <img src="/placeholder.svg?height=200&width=300&text=Holland+Lop+Rabbit" alt="Bella the Rabbit">
+                    <div class="trending-card-content">
+                        <h3>Bella</h3>
+                        <p>Holland Lop Rabbit • 6 months</p>
+                        <div class="trending-price">$150</div>
+                        <button class="btn btn-secondary btn-sm">View Details</button>
+                    </div>
+                </div>
+                <div class="trending-card" onclick="viewTrendingPet(3)">
+                    <img src="/placeholder.svg?height=200&width=300&text=Siamese+Cat" alt="Max the Siamese Cat">
+                    <div class="trending-card-content">
+                        <h3>Max</h3>
+                        <p>Siamese Cat • 1 year</p>
+                        <div class="trending-price">$400</div>
+                        <button class="btn btn-secondary btn-sm">View Details</button>
+                    </div>
+                </div>
+                <div class="trending-card" onclick="viewTrendingPet(4)">
+                    <img src="/placeholder.svg?height=200&width=300&text=Colorful+Parrot" alt="Daisy the Parrot">
+                    <div class="trending-card-content">
+                        <h3>Daisy</h3>
+                        <p>Colorful Parrot • 3 years</p>
+                        <div class="trending-price">$600</div>
+                        <button class="btn btn-secondary btn-sm">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="trending-actions">
+                <a href="explore.html" class="btn btn-primary">Explore All Pets</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-bTocrosvbkWpScyPnfD72S0NgWUauE.png" alt="PawPal Logo" class="about-logo">
+                <h2>About PawPal</h2>
+                <p>
+                    We are dedicated to connecting loving homes with pets in need, ensuring a smooth and reliable experience for
+                    buyers and sellers alike. Our platform brings together pet lovers from across the country, creating a trusted
+                    community where every pet finds their perfect match.
+                </p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-label">Happy Families</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5,000+</div>
+                        <div class="stat-label">Pets Rehomed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Verified Sellers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-bTocrosvbkWpScyPnfD72S0NgWUauE.png" alt="PawPal Logo" class="footer-logo-img">
+                        <span>PawPal</span>
+                    </div>
+                    <p>&copy; 2023 PawPal. All rights reserved.</p>
+                    <p class="footer-tagline">Connecting hearts, one paw at a time.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="explore.html">Explore Pets</a></li>
+                        <li><a href="sell.html">List Your Pet</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="signup.html">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#" onclick="showComingSoon()">Help Center</a></li>
+                        <li><a href="#" onclick="showComingSoon()">Pet Care Tips</a></li>
+                        <li><a href="#" onclick="showComingSoon()">Safety Guidelines</a></li>
+                        <li><a href="#" onclick="showComingSoon()">Terms of Service</a></li>
+                        <li><a href="#" onclick="showComingSoon()">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> info@pawpal.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Pet Street, Animal City, AC 12345</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" onclick="showComingSoon()"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter" onclick="showComingSoon()"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram" onclick="showComingSoon()"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube" onclick="showComingSoon()"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Coming Soon Modal -->
+    <div class="modal" id="coming-soon-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="coming-soon-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h2>Coming Soon!</h2>
+                <p>This feature is currently under development and will be available soon.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="closeModal('coming-soon-modal')">Got it!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Home page specific functions
+        function viewTrendingPet(petId) {
+            saveToLocalStorage('selectedPetId', petId);
+            window.location.href = 'pet-detail.html';
+        }
+
+        function showComingSoon() {
+            showModal('coming-soon-modal');
+        }
+    </script>
+</body>
+</html>

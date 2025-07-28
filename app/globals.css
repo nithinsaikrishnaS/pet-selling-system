@@ -1,0 +1,72 @@
+/* Removed: @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@700&display=swap"); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 100% 97.1%; /* #FFF8F0 - Cream White */
+    --foreground: 0 0% 17.3%; /* #2C2C2C - Dark Nose Black */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 17.3%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 17.3%;
+    --primary: 28 39.8% 48.8%; /* #A47551 - Paw Brown */
+    --primary-foreground: 30 100% 97.1%; /* Cream White */
+    --secondary: 208 25.9% 74.3%; /* #A4C3D7 - Sky Blue Collar */
+    --secondary-foreground: 0 0% 17.3%; /* Dark Nose Black */
+    --muted: 0 0% 55%; /* #8C8C8C - Fur Gray */
+    --muted-foreground: 0 0% 55%; /* Fur Gray */
+    --accent: 18 49.2% 76.3%; /* #E3B7A0 - Soft Pink Nose */
+    --accent-foreground: 0 0% 17.3%; /* Dark Nose Black */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 55%; /* Fur Gray */
+    --input: 0 0% 100%;
+    --ring: 28 39.8% 48.8%; /* Paw Brown */
+    --radius: 16px; /* Default border-radius */
+
+    /* Custom Pet-Themed Colors (HSL values for Tailwind) */
+    --cream-white: 30 100% 97.1%;
+    --paw-brown: 28 39.8% 48.8%;
+    --soft-pink-nose: 18 49.2% 76.3%;
+    --fur-gray: 0 0% 55%;
+    --sky-blue-collar: 208 25.9% 74.3%;
+    --dark-nose-black: 0 0% 17.3%;
+  }
+
+  .dark {
+    --background: 240 5.9% 10%;
+    --foreground: 0 0% 98%;
+    --card: 240 5.9% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 5.9% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 0 0% 98%;
+
+    /* Custom Pet-Themed Colors for Dark Mode (adjust as needed for contrast) */
+    --cream-white: 240 5.9% 10%; /* Darker background */
+    --paw-brown: 28 39.8% 48.8%; /* Same primary */
+    --soft-pink-nose: 18 49.2% 76.3%; /* Same secondary accent */
+    --fur-gray: 0 0% 75%; /* Lighter text */
+    --sky-blue-collar: 208 25.9% 74.3%; /* Same links */
+    --dark-nose-black: 0 0% 98%; /* Lighter headlines */
+  }
+}
+
+/* Removed direct font-family declarations, relying on Tailwind's font utilities */
+/* html { font-family: "Nunito", sans-serif; } */
+/* h1, h2, h3, h4, h5, h6 { font-family: "Poppins", sans-serif; font-weight: 700; } */

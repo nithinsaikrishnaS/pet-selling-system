@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Details - PawPal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-paw"></i>
+                <span>PawPal</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="explore.html" class="nav-link">Explore Pets</a>
+                <a href="sell.html" class="nav-link">List Your Pet</a>
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pet Detail Section -->
+    <section class="pet-detail">
+        <div class="container">
+            <div class="pet-detail-grid">
+                <!-- Image Carousel -->
+                <div class="pet-images">
+                    <div class="image-carousel">
+                        <div class="carousel-container" id="carousel-container">
+                            <!-- Images will be loaded here -->
+                        </div>
+                        <div class="carousel-dots" id="carousel-dots">
+                            <!-- Dots will be generated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pet Information -->
+                <div class="pet-info">
+                    <div class="pet-header">
+                        <h1 id="pet-name">Buddy</h1>
+                        <div class="pet-badges">
+                            <span class="badge badge-breed" id="pet-breed">Golden Retriever</span>
+                            <span class="badge badge-gender" id="pet-gender">Male</span>
+                            <span class="badge badge-vaccination" id="pet-vaccination">Vaccinated</span>
+                        </div>
+                    </div>
+
+                    <p class="pet-description" id="pet-description">
+                        Buddy is a loving and energetic Golden Retriever looking for his forever home. 
+                        He loves to play fetch, go for long walks, and cuddle up on the couch.
+                    </p>
+
+                    <div class="pet-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Age:</span>
+                            <span id="pet-age">2 years, 6 months</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Weight:</span>
+                            <span id="pet-weight">25 kg</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Temperament:</span>
+                            <span id="pet-temperament">Friendly, Playful, Loyal</span>
+                        </div>
+                    </div>
+
+                    <!-- Seller Information -->
+                    <div class="seller-card">
+                        <h3>Seller Information</h3>
+                        <div class="seller-info">
+                            <div class="seller-avatar">
+                                <img src="/placeholder.svg?height=60&width=60&text=JD" alt="Seller avatar" id="seller-avatar">
+                            </div>
+                            <div class="seller-details">
+                                <div class="seller-item">
+                                    <i class="fas fa-user"></i>
+                                    <span id="seller-name">John Doe</span>
+                                </div>
+                                <div class="seller-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span id="seller-location">New York, NY</span>
+                                </div>
+                                <div class="seller-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span id="seller-contact">123-456-7890</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price and Buy Button -->
+                    <div class="pet-purchase">
+                        <div class="price-section">
+                            <span class="price" id="pet-price">$850</span>
+                            <span class="availability badge badge-available" id="pet-availability">Available</span>
+                        </div>
+                        <button class="btn btn-primary btn-large" onclick="buyPet()">Buy This Pet</button>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <i class="fas fa-shield-check"></i>
+                            <span>Verified Seller</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-stethoscope"></i>
+                            <span>Vet Checked</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Secure Transaction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="pet-detail.js"></script>
+</body>
+</html>

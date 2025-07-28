@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Pets - PawPal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-paw"></i>
+                <span>PawPal</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="explore.html" class="nav-link active">Explore Pets</a>
+                <a href="sell.html" class="nav-link">List Your Pet</a>
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar sticky">
+        <div class="container">
+            <div class="filter-grid">
+                <div class="search-input">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search" placeholder="Search by name, breed, or type...">
+                </div>
+                <select id="pet-type">
+                    <option value="">All Types</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="rabbit">Rabbit</option>
+                    <option value="bird">Bird</option>
+                    <option value="fish">Fish</option>
+                </select>
+                <select id="age-range">
+                    <option value="">All Ages</option>
+                    <option value="0-1">0-1 years</option>
+                    <option value="1-3">1-3 years</option>
+                    <option value="3-5">3-5 years</option>
+                    <option value="5+">5+ years</option>
+                </select>
+                <select id="price-range">
+                    <option value="">All Prices</option>
+                    <option value="0-100">$0 - $100</option>
+                    <option value="100-500">$100 - $500</option>
+                    <option value="500-1000">$500 - $1000</option>
+                    <option value="1000+">$1000+</option>
+                </select>
+                <select id="sort-by">
+                    <option value="recent">Recent</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="popular">Popular</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pets Grid -->
+    <section class="pets-section">
+        <div class="container">
+            <div class="pets-grid" id="pets-grid">
+                <!-- Loading skeletons will be inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="explore.js"></script>
+</body>
+</html>
