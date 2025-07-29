@@ -15,12 +15,16 @@ export async function signUp(formData: FormData) {
   try {
     const supabase = await createClient()
 
+    // Get the site URL from environment or use a default
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 
+                   (typeof window !== 'undefined' ? window.location.origin : 'https://your-app.vercel.app')
+
     // Sign up the user
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
-        emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/auth/callback`,
+        emailRedirectTo: `${siteUrl}/auth/callback`,
         data: {
           full_name: name,
         },
@@ -135,8 +139,12 @@ export async function forgotPassword(formData: FormData) {
   try {
     const supabase = await createClient()
 
+    // Get the site URL from environment or use a default
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 
+                   (typeof window !== 'undefined' ? window.location.origin : 'https://your-app.vercel.app')
+
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/auth/reset-password`,
+      redirectTo: `${siteUrl}/auth/reset-password`,
     })
 
     if (error) {
