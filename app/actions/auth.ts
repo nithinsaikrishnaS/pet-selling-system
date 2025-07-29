@@ -20,7 +20,7 @@ export async function signUp(formData: FormData) {
       email,
       password,
       options: {
-        emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback`,
+        emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/auth/callback`,
         data: {
           full_name: name,
         },
@@ -33,14 +33,8 @@ export async function signUp(formData: FormData) {
     }
 
     if (data.user) {
-      // Wait a moment for the trigger to potentially create the profile
-      await new Promise((resolve) => setTimeout(resolve, 500))
-
-      // Check if profile exists
-      const { data: existingProfile } = await supabase.from("profiles").select("id").eq("id", data.user.id).single()
-
-      if (!existingProfile) {
-        // Use admin client to create profile if trigger didn't work
+      // Try to create profile with admin client if service role key is available
+      try {
         const adminSupabase = createAdminClient()
         const { error: profileError } = await adminSupabase.from("profiles").insert([
           {
@@ -55,6 +49,9 @@ export async function signUp(formData: FormData) {
           console.error("Profile creation error:", profileError)
           // Don't fail the signup, profile can be created later
         }
+      } catch (adminError) {
+        console.error("Admin client error:", adminError)
+        // Continue without admin client if service role key is missing
       }
 
       return {
@@ -94,24 +91,28 @@ export async function signIn(formData: FormData) {
     }
 
     if (data.user) {
-      // Check if profile exists, create if not
-      const { data: existingProfile } = await supabase.from("profiles").select("id").eq("id", data.user.id).single()
+      // Try to create profile with admin client if service role key is available
+      try {
+        const { data: existingProfile } = await supabase.from("profiles").select("id").eq("id", data.user.id).single()
 
-      if (!existingProfile) {
-        // Use admin client to create missing profile
-        const adminSupabase = createAdminClient()
-        const { error: profileError } = await adminSupabase.from("profiles").insert([
-          {
-            id: data.user.id,
-            full_name: data.user.user_metadata?.full_name || "",
-            email: data.user.email || "",
-            created_at: new Date().toISOString(),
-          },
-        ])
+        if (!existingProfile) {
+          const adminSupabase = createAdminClient()
+          const { error: profileError } = await adminSupabase.from("profiles").insert([
+            {
+              id: data.user.id,
+              full_name: data.user.user_metadata?.full_name || "",
+              email: data.user.email || "",
+              created_at: new Date().toISOString(),
+            },
+          ])
 
-        if (profileError) {
-          console.error("Profile creation error during login:", profileError)
+          if (profileError) {
+            console.error("Profile creation error during login:", profileError)
+          }
         }
+      } catch (adminError) {
+        console.error("Admin client error during login:", adminError)
+        // Continue without admin client if service role key is missing
       }
 
       return { success: true, message: "Successfully logged in!" }
